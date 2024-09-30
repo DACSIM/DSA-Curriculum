@@ -42,7 +42,7 @@ This repository is for the excos to upload their curriculum materials for future
 ### Advanced SQL
 ```json
 {
-  "Topic":"A deep dive into advanced SQL techniques, with an emphasis on query optimisation techniques for a plethora of case studies".
+  "Topic":"A deep dive into advanced SQL techniques, with an emphasis on query optimisation techniques for a plethora of case studies",
   "Dates":"21/11/24", "26/11/24", "3/11/24", "5/11/24"
   "Lecturers":"Jun Yeow and Jaryl"
 }

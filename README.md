@@ -79,7 +79,7 @@ If you need to download data files for your curicullumn lecture, you can find th
   * Make sure all of these extensions are by Microsoft:
     - Python
     - Jupyter
-    - SQL Server
+    - SQL Server (postgresql)
     - SQL Database Projects
     - GitHub Pull Requests
 

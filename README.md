@@ -79,8 +79,6 @@ If you need to download data files for your curriculum lecture, you can find the
   * Make sure all of these extensions are by Microsoft:
     - Python
     - Jupyter
-    - SQL Server (postgresql)
-    - SQL Database Projects
     - GitHub Pull Requests
 
 5. Congratulations! You are now ready to code!

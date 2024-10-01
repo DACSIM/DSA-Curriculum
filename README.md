@@ -1,4 +1,4 @@
-# The DSA Curicullumn
+# The DSA Curriculum
 This repository is for the excos to upload their curriculum materials for future sub-comms to use. Please feel free to fork this repository for your own use!
 
 ## The Timeline
@@ -26,7 +26,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"Understanding the theory behind Generative AI models and learning to code with them practically",
   "Dates":"15/10/24", "17/10/24", "22/10/24"
-  "Lecturers":"Luqman and Jaryl"
+  "Lecturers":"Jun Yeow and Jaryl"
 }
 ```
 ---
@@ -79,13 +79,13 @@ If you need to download data files for your curicullumn lecture, you can find th
   * Make sure all of these extensions are by Microsoft:
     - Python
     - Jupyter
-    - SQL Server (mssql)
+    - SQL Server
     - SQL Database Projects
     - GitHub Pull Requests
 
 5. Congratulations! You are now ready to code!
 
-## Forking the curicullumn
+## Forking the curriculum
 In GitHub, "forking a repository" means to create a copy of all the files within a certain repository for your own GitHub account. For example, you can "fork" this repository to create a personal copy of the DAC curicullumn materials inside your GitHub account.
 
 If you need a more visual guide to understand how to fork a repository, you can find it here: https://scribehow.com/shared/Forking_the_DACDSA_Curriculum_Repository__uJ4bd99_TTWagei2bQgC1Q

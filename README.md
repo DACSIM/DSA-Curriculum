@@ -1,4 +1,4 @@
-#Terminal Commands for VSCode
+# Terminal Commands for VSCode
 ```
 {
   git checkout -b new-branch-name #create and enter new branch
@@ -8,6 +8,7 @@
   git checkout main               #return to main branch
   git merge new-branch-name       #merge new branch to main
   git push origin main            #push changes
+  git branch -d branch-name       #delete branch
 }
 ```
 # The DSA Curriculum

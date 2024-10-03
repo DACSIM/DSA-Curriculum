@@ -1,3 +1,15 @@
+#Terminal Commands for VSCode
+```
+{
+  git checkout -b new-branch-name #create and enter new branch
+  git fetch origin main           #pull current state of respository
+  git add file/directory          #stage file changes
+  git commit -m "Commit Message"  #commit message
+  git checkout main               #return to main branch
+  git merge new-branch-name       #merge new branch to main
+  git push origin main            #push changes
+}
+```
 # The DSA Curriculum
 This repository is for the excos to upload their curriculum materials for future sub-comms to use. Please feel free to fork this repository for your own use!
 

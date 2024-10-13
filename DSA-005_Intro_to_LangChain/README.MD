@@ -1,6 +1,6 @@
 ## Common commands used in this tutorial:
 
-### To create virtual environment
+### To create virtual environment (macOS)
 ``` python
 # Create a 
 python -m venv myenv
@@ -22,6 +22,22 @@ pip install <package-name>
 
 # To deactivate the virtual environment
 Deactivate by deactivate
+```
+### To create virtual enviornment (Windows 11)
+``` python
+
+# Create a 
+python -m venv venv
+
+# Activate the virtual environment 
+venv\Scripts\activate
+
+# Installing packages
+pip install <package-name>
+
+# To deactivate the virtual enviornment
+deactivate
+
 ```
 
 ### To git ignore important information

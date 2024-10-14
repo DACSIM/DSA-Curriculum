@@ -66,7 +66,7 @@ ruby update_csvs.rb
 
 ---
 
-## Getting Started ()
+## Getting Started
 
 ### 1. Open SQL Shell (psql)
 

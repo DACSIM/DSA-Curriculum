@@ -3,11 +3,21 @@
 -- Remeber to create your schema called myownschema!
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+-- This double dash is to create a comment
+
+/*
+Multi-line comment
+*/
+
 -- CREATE SCHEMA myownschema;
+-- To create a schema, select the line and click the play button
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Run this once!
+DROP TABLE myownschema.numbers
+
 CREATE TABLE myownschema.numbers (
 	index INT
 );
@@ -28,6 +38,7 @@ VALUES
 
 SELECT *
 FROM myownschema.numbers;
+-- fullstop is to indicate the end of the schema
 
 -- Q1: Write a SQL query to find only the numbers that start a sequence of at least three consecutive numbers in the table. 
 -- Form the additional two columns to illustrate the sequence of at least three consecutive numbers. Do not include numbers that can't form three consecutive numbers.
@@ -41,6 +52,12 @@ col1 col2 col3
 */
 
 -- Answer
+SELECT *
+FROM myownschema.numbers AS num1
+INNER JOIN myownschema.numbers AS num2
+		ON num1.index + 1 = num2.index
+INNER JOIN myownschema.numbers AS num3
+		ON num2.index + 1 = num3.index;
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,9 +79,70 @@ FROM myownschema.stars;
 -- Q2: Form a triangle that has three rows, 3 stars at the top row and 1 star at the bottom row and rectangle with 3 rows and 2 columns using this table only.
 
 -- Rectangle Answer:
+(
+SELECT *
+FROM myownschema.stars AS col1
+INNER JOIN myownschema.stars AS col2
+		ON col1.star = col2.star
+)
+UNION ALL 
+(
+SELECT *
+FROM myownschema.stars AS col1
+INNER JOIN myownschema.stars AS col2
+		ON col1.star = col2.star
+)
+UNION ALL 
+(
+SELECT *
+FROM myownschema.stars AS col1
+INNER JOIN myownschema.stars AS col2
+		ON col1.star = col2.star
+);
 
 
 -- Triangle Answer: 
+(
+SELECT *
+FROM myownschema.stars AS col1
+INNER JOIN myownschema.stars AS col2
+		ON col1.star = col2.star
+INNER JOIN myownschema.stars AS col3
+		ON col2.star = col3.star
+)
+UNION ALL
+(
+SELECT 
+	col1.star,
+	col2.star,
+	' ' AS blank
+FROM myownschema.stars AS col1
+INNER JOIN myownschema.stars AS col2
+		ON col1.star = col2.star
+)
+UNION ALL
+(
+SELECT 
+	col1.star,
+	' ' AS blank,
+	' ' AS blank
+FROM myownschema.stars AS col1
+);
+
+-- Having is a filter specifically for COUNT(), SUM() and AVG()
+
+/*
+Hierarchy:
+SELECT
+FROM
+JOIN
+WHERE = filters
+GROUP BY
+HAVING
+ORDER BY
+*/
+
+SELECT ' ';
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------

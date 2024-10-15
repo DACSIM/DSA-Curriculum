@@ -349,6 +349,24 @@ SELECT *
 FROM myownschema.actor;
 
 -- Answers:
+WITH total_table AS (
+	SELECT
+		store_id,
+		customer_id,
+		COUNT(*) AS orders,
+
+		DENSE_RANK() OVER(PARTITION BY customer_id ORDER BY COUNT(*) DESC) AS rank -- DENSE_RANK() 1 2 2 3
+		-- RANK(), -- 1 2 2 (<--come at the same time) 4
+		-- ROW_NUMBER() -- 1 2 3 4
+
+	FROM myownschema.orders
+	GROUP BY 1,2
+)
+
+SELECT c.name, tt.store_id, tt.orders, tt.rank
+FROM myownschema.customer AS c
+INNER JOIN total_table AS tt
+		ON c.customer_id = tt.customer_id;
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------

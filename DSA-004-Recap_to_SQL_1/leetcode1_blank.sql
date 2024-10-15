@@ -150,6 +150,8 @@ FROM myownschema.stars
 -- The analyst is interested in the activation rate of specific users in the emails table, which may not include all users that could potentially be found in the texts table.
 -- For example, user 123 in the emails table may not be in the texts table and vice versa.
 
+-- DROP TABLE myownschema.emails;
+-- DROP TABLE myownschema.texts;
 -- Create emails table
 CREATE TABLE myownschema.emails (
     email_id INT,
@@ -186,7 +188,11 @@ SELECT *
 FROM myownschema.texts;
 
 -- Answer:
-
+SELECT e.email_id, ROUND((COUNT(CASE WHEN t.signup_action = 'Confirmed' THEN 1 END)/COUNT(t.signup_action))*100,2) AS "activation rate"
+FROM myownschema.emails AS e
+INNER JOIN myownschema.texts AS t
+		ON e.email_id = t.email_id
+GROUP BY e.email_id;
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -200,6 +206,8 @@ FROM myownschema.texts;
 -- then it should remain as Order ID 7 in the corrected data.
 
 -- In the results, return the correct pairs of order IDs and items.
+
+-- DROP TABLE myownschema.zomato_orders;
 
 CREATE TABLE myownschema.zomato_orders (
     order_id INT,
@@ -250,7 +258,9 @@ SELECT *
 FROM myownschema.user_transactions;
 
 -- Answer:
-
+SELECT *
+FROM myownschema.user_transactions
+WHERE
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 

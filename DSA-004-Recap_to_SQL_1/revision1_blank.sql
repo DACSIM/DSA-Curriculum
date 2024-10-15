@@ -11,6 +11,8 @@
 -- humanresources.employee table
 
 --Answer
+SELECT *
+FROM humanresources.employee;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -18,6 +20,8 @@
 -- The third column heading is renamed to employee_id. Arranged the output in ascending order by lastname.
 
 --Answer
+SELECT firstName, lastName, businessentityid
+FROM person.person;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -27,6 +31,10 @@
 -- production.product
 
 --Answer
+SELECT productid, productnumber, name AS "productname"
+FROM production.product
+WHERE sellstartdate IS NOT NULL AND productline = 'T'
+ORDER BY name ASC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,15 +44,24 @@
 -- sales.salesorderheader
 
 --Answer
+SELECT customerid, SUM(freight) AS "total freight"
+FROM sales.salesorderheader
+GROUP BY customerid
+ORDER BY customerid ASC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Q5:From the following table write a query in SQL to retrieve the number of employees for each City. Return city and number of employees. 
 -- Sort the result in ascending order on city.
-
 -- person.businessentityaddress
 
 --Answer
+SELECT pa.city, COUNT(pba.businessentityid) AS "Number of Employees"
+FROM person.businessentityaddress AS pba
+INNER JOIN person.address AS pa
+		ON pa.addressid = pba.addressid
+GROUP BY pa.city
+ORDER BY pa.city ASC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,7 +70,17 @@
 
 -- person.businessentitycontact, person.contacttype, person.person
 
+-- Is businessentityid or personid in BusinessEntityContact = businessentityid in Person
+
 --Answer
+SELECT pbc.BusinessEntityID, p.LastName, p.FirstName
+FROM person.businessentitycontact AS pbc
+INNER JOIN person.contacttype AS pct
+		ON pct.contacttypeid = pbc.contacttypeid
+INNER JOIN person.person AS p
+		ON pbc.personid = p.businessentityid
+WHERE pct.name = 'Purchasing Manager'
+ORDER BY LastName ASC, FirstName ASC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -61,6 +88,10 @@
 -- Return SalesOrderID, total cost. Round to 2 decimal place and add the dollar sign at the front.
 
 --Answer
+SELECT  SalesOrderID, ROUND(SUM(salesorderID), 2) AS "total cost"
+FROM sales.salesorderdetail
+GROUP BY salesorderid
+HAVING ROUND(SUM(salesorderID), 2) > 100000;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -68,12 +99,20 @@
 -- Return lastname, and firstname and display the result in ascending order on firstname and descending order on lastname columns.
 
 --Answer
+SELECT lastname, firstname
+FROM person.person
+WHERE lastname LIKE 'R%' AND firstname LIKE '%n'
+ORDER BY firstname ASC, lastname DESC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Q9: From the following humanresources.department table write a query in  SQL to skip the first 5 rows and return the next 5 rows from the sorted result set.
 
 --Answer
+SELECT *
+FROM humanresources.department
+ORDER BY departmentid ASC
+OFFSET 5 ROWS;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -83,5 +122,11 @@
 -- person.person, person.personphone
 
 --Answer
+SELECT p.BusinessEntityID, p.FirstName, p.LastName, pp.PhoneNumber
+FROM person.person AS p
+INNER JOIN person.personphone AS pp
+		ON pp.businessentityid = p.businessentityid
+WHERE lastname LIKE 'L%'
+ORDER BY p.lastname ASC, p.firstname ASC;
 
 -------------------------------------------------------------------------------------------------------------------------------------------

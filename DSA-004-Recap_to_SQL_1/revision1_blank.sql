@@ -88,7 +88,7 @@ ORDER BY LastName ASC, FirstName ASC;
 -- Return SalesOrderID, total cost. Round to 2 decimal place and add the dollar sign at the front.
 
 --Answer
-SELECT  SalesOrderID, ROUND(SUM(salesorderID), 2) AS "total cost"
+SELECT  SalesOrderID, CONCAT('$ ',ROUND(SUM(salesorderID), 2)) AS "total cost"
 FROM sales.salesorderdetail
 GROUP BY salesorderid
 HAVING ROUND(SUM(salesorderID), 2) > 100000;
@@ -112,7 +112,8 @@ ORDER BY firstname ASC, lastname DESC;
 SELECT *
 FROM humanresources.department
 ORDER BY departmentid ASC
-OFFSET 5 ROWS;
+OFFSET 5 ROWS
+LIMIT 5;
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 

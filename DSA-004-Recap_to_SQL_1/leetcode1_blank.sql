@@ -229,7 +229,19 @@ SELECT *
 FROM myownschema.zomato_orders;
 
 -- Answer:
-
+SELECT wrong.order_id AS corrected_order_id,
+	CASE 
+		WHEN t2.order_id IS NULL AND t1.order_id IS NULL THEN wrong.item
+    	WHEN t1.order_id IS NULL AND t2.order_id IS NOT NULL THEN t2.item
+    	WHEN t2.order_id IS NULL AND t1.order_id IS NOT NULL THEN t1.item
+	END AS item
+FROM myownschema.zomato_orders AS wrong 
+LEFT JOIN myownschema.zomato_orders AS t1
+	ON wrong.order_id = (t1.order_id + 1)
+	AND t1.order_id % 2 = 1
+LEFT JOIN myownschema.zomato_orders AS t2
+	ON wrong.order_id = (t2.order_id - 1)
+	AND t2.order_id %2 = 0;
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Q5:
@@ -258,9 +270,13 @@ SELECT *
 FROM myownschema.user_transactions;
 
 -- Answer:
-SELECT *
-FROM myownschema.user_transactions
-WHERE
+SELECT 
+	EXTRACT(YEAR FROM transaction_date) AS year,
+	product_id,
+	spend AS "current year spend",
+	LAG(spend) OVER(PARTITION BY product_id ORDER BY EXTRACT(YEAR FROM transaction_date)ASC) AS "previous year spend",
+	ROUND(100.0 * spend / LAG(spend) OVER(PARTITION BY product_id ORDER BY EXTRACT(YEAR FROM transaction_date)ASC) - 100, 2) AS "year on year growth %"
+FROM myownschema.user_transactions;
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -50,7 +50,7 @@ git clone https://github.com/lorint/AdventureWorks-for-Postgres.git
 
 It should look something like this! A mixture of both files in the folder.
 
-<img align='centre' src="/Users/junyeow/Desktop/DAC-Curriculum/additional/Screenshot 2024-10-09 at 1.11.22 AM.png" width="500">
+<img align='centre' src="https://i.imgur.com/ibD5PiT.png" width="500">
 
 ### 3) Go to the directory where the repository is stored! In shell/terminal
 
@@ -74,7 +74,7 @@ Launch the **SQL Shell (psql)** application:
 
 - Press `Enter` to accept the default values for **Server**, **Database**, and **Port**, unless you want to use your own specific custom settings. Should look something like this!
 
-<img align='centre' src="/Users/junyeow/Desktop/DAC-Curriculum/additional/photo_2024-10-09_23-34-31.jpg" width="1000">
+<img align='centre' src="https://i.imgur.com/RFTLXKw.jpeg" width="1000">
 
 - When prompted, enter your PostgreSQL **username** (default is `postgres`).
 - Enter your **password** if prompted.

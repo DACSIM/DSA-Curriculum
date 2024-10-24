@@ -1,4 +1,4 @@
-test.env
 media
-.DS_store
-Answers/
+.DS_Store
+test.env
+myvenv/

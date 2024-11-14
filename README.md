@@ -8,7 +8,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"A refersher on Python syntax, as well as on EDA and Data Visualisation techniques using Python.",
   "Dates":"1/10/24", "3/10/24", "8/10/24"
-  "Lecturers":"Abhishek and Sibikrishnan"
+  "Lecturers":"Abhishek"
 }
 ```
 ---
@@ -17,7 +17,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"A referesher on SQL syntax, as well as on advanced SQL functions",
   "Dates":"10/10/24",
-  "Lecturers":"Jun Yeow and Jaryl"
+  "Lecturers":"Jun Yeow"
 }
 ```
 ---
@@ -26,7 +26,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"Understanding the theory behind Generative AI models and learning to code with them practically",
   "Dates":"15/10/24", "17/10/24", "22/10/24"
-  "Lecturers":"Jun Yeow and Jaryl"
+  "Lecturers":"Jun Yeow"
 }
 ```
 ---
@@ -35,7 +35,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"A deep dive into understanding and building complex Neural Networks to solve a variety of problems and use cases, with a brief look into other ML algorithms",
   "Dates":"24/10/24", "29/10/24", "12/11/24", "14/11/24", "19/11/24"
-  "Lecturers":"Abhishek and Sibikrishnan"
+  "Lecturers":"Abhishek"
 }
 ```
 ---
@@ -44,7 +44,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"A deep dive into advanced SQL techniques, with an emphasis on query optimisation techniques for a plethora of case studies",
   "Dates":"21/11/24", "26/11/24", "3/11/24", "5/11/24"
-  "Lecturers":"Jun Yeow and Jaryl"
+  "Lecturers":"Jun Yeow and Abhishek"
 }
 ```
 ---
@@ -53,7 +53,7 @@ This repository is for the excos to upload their curriculum materials for future
 {
   "Topic":"TBD",
   "Dates":"5/11/24", "7/11/24"
-  "Lecturers":"Jun Yeow, Luqman, Jaryl, Abhishek, Sibikrishknan, Geneiveve, Kaavya, and Cheryl"
+  "Lecturers":"Jun Yeow, Luqman, Jaryl, Abhishek, Geneiveve, Kaavya, and Cheryl"
 }
 ```
 ---

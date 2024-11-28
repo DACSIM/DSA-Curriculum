@@ -69,7 +69,7 @@ This repository is for the excos to upload their curriculum materials for future
 ## Setting up VSCode
 VSCode stands for Visual Studio Code, which is an Integrated Development Environment (IDE), which basically means its a software which can read, write and run code files in several different programming languages.
 
-If you need to download data files for your curriculum lecture, you can find them here: https://drive.google.com/drive/folders/1YfAFh5wNs7OGBBXvfNlCNd59YF8sj7gu?usp=drive_link
+If you need to download data files for your curriculum lecture, you can find them here: https://drive.google.com/drive/folders/1CHD58vL4TLSvLfrnw0Mh_-EAqkNBUMVH?usp=sharing
 
 1. Install Visual Studio Code from https://code.visualstudio.com/
 
